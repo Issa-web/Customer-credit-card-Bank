@@ -1,0 +1,12 @@
+<h3>Customer Form</h3>
+
+<%= form_tag customers_path do %>
+    <label>Customer Name:</label><br>
+    <%= text_field_tag :'customer[name]' %><br>
+  
+    <label>Customer age:</label><br>
+    <%= text_area_tag :'customer[age]' %><br>
+  
+    <%= submit_tag "Submit New Customer" %>
+  <% end %>
+

@@ -1,7 +1,7 @@
 class BanksController < ApplicationController
 
     def index
-        @bank = Bank.all
+        @banks = Bank.all
     end
 
     def show
