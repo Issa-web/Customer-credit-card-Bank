@@ -9,6 +9,7 @@ class CustomersController < ApplicationController
     end
 
     def create  
+        byebug
         @customer = Customer.new(strong_params)
         @customer.save
         redirect_to customer_path(@customer)

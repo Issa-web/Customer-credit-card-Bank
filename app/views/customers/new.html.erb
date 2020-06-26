@@ -7,9 +7,10 @@
     <%= f.label :age, 'Customer Age' %><br>
     <%= f.text_field :age %><br>
 
+    <%= f.select :credit_card_ids, options_from_collection_for_select(CreditCard.all, "id", "card_name") %><br>
 
     <%= f.submit 'Create New Customer' %><br>
     <%end %>
 
 
-   
+    

@@ -2975,3 +2975,72 @@ Processing by CustomersController#new as HTML
 Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 5556)
 
 
+Started GET "/customers/new" for ::1 at 2020-06-26 17:04:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mCreditCard Load (0.3ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards"[0m
+  ↳ app/views/customers/new.html.erb:10
+  Rendered customers/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 4315)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.3ms | Allocations: 9192)
+
+
+Started GET "/customers/new" for ::1 at 2020-06-26 17:05:24 -0400
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1840)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 3059)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :credit_cards:Symbol):
+     7:     <%= f.label :age, 'Customer Age' %><br>
+     8:     <%= f.text_field :age %><br>
+     9: 
+    10:     <%= f.select :credit_cards.id, options_from_collection_for_select(CreditCard.all, "id", "card_name") %><br>
+    11: 
+    12:     <%= f.submit 'Create New Customer' %><br>
+    13:     <%end %>
+  
+app/views/customers/new.html.erb:10
+app/views/customers/new.html.erb:3
+Started GET "/customers/new" for ::1 at 2020-06-26 17:06:34 -0400
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards"[0m
+  ↳ app/views/customers/new.html.erb:10
+  Rendered customers/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3926)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 5148)
+
+
+  
+ActionView::Template::Error (undefined method `credit_card_id' for #<Customer:0x00007fe80f2cc410>
+Did you mean?  credit_card_ids
+               credit_card_ids=
+               credit_cards
+               credit_cards=):
+     7:     <%= f.label :age, 'Customer Age' %><br>
+     8:     <%= f.text_field :age %><br>
+     9: 
+    10:     <%= f.select :credit_card_id, options_from_collection_for_select(CreditCard.all, "id", "card_name") %><br>
+    11: 
+    12:     <%= f.submit 'Create New Customer' %><br>
+    13:     <%end %>
+  
+app/views/customers/new.html.erb:10
+app/views/customers/new.html.erb:3
+Started GET "/customers/new" for ::1 at 2020-06-26 17:07:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards"[0m
+  ↳ app/views/customers/new.html.erb:10
+  Rendered customers/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 6957)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 21.7ms | ActiveRecord: 1.4ms | Allocations: 16689)
+
+
+Started POST "/customers" for ::1 at 2020-06-26 17:07:55 -0400
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"/MVF7UpUb2qBYskNKfER7I89KuOom/fr6F9hce1nq3uLqBsFOoxI4gDifjLmsaw0a/fmMayFgCN41BSra8cGfw==", "customer"=>{"name"=>"Tien", "age"=>"67", "credit_card_ids"=>"11"}, "commit"=>"Create New Customer"}
