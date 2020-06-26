@@ -2031,3 +2031,397 @@ Processing by CustomersController#index as HTML
 Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms | Allocations: 5060)
 
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks" INNER JOIN "credit_cards" ON "banks"."id" = "credit_cards"."bank_id" WHERE "credit_cards"."customer_id" = ? LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "banks" INNER JOIN "credit_cards" ON "banks"."id" = "credit_cards"."bank_id" WHERE "credit_cards"."customer_id" = ?[0m  [["customer_id", 14]]
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks" INNER JOIN "credit_cards" ON "banks"."id" = "credit_cards"."bank_id" WHERE "credit_cards"."customer_id" = ? LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 11]]
+  [1m[36mBank Load (0.5ms)[0m  [1m[34mSELECT "banks".* FROM "banks" ORDER BY "banks"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBank Load (0.4ms)[0m  [1m[34mSELECT "banks".* FROM "banks" INNER JOIN "credit_cards" ON "banks"."id" = "credit_cards"."bank_id" WHERE "credit_cards"."customer_id" = ? ORDER BY "banks"."id" ASC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mBank Load (0.3ms)[0m  [1m[34mSELECT "banks".* FROM "banks" INNER JOIN "credit_cards" ON "banks"."id" = "credit_cards"."bank_id" WHERE "credit_cards"."customer_id" = ? ORDER BY "banks"."id" ASC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks" INNER JOIN "credit_cards" ON "banks"."id" = "credit_cards"."bank_id" WHERE "credit_cards"."customer_id" = ? ORDER BY "banks"."id" ASC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks" INNER JOIN "credit_cards" ON "banks"."id" = "credit_cards"."bank_id" WHERE "credit_cards"."customer_id" = ? ORDER BY "banks"."id" ASC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 11]]
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? ORDER BY "credit_cards"."id" DESC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? ORDER BY "credit_cards"."id" DESC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.3ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? ORDER BY "credit_cards"."id" DESC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? ORDER BY "credit_cards"."id" DESC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? ORDER BY "credit_cards"."id" DESC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[36mCreditCard Load (0.3ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? ORDER BY "credit_cards"."id" DESC LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "credit_cards" WHERE "credit_cards"."customer_id" = ?[0m  [["customer_id", 14]]
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 11]]
+  [1m[36mCreditCard Load (0.2ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 11]]
+  [1m[36mCreditCard Load (0.3ms)[0m  [1m[34mSELECT "credit_cards".* FROM "credit_cards" WHERE "credit_cards"."customer_id" = ? LIMIT ?[0m  [["customer_id", 14], ["LIMIT", 11]]
+Started GET "/banks" for ::1 at 2020-06-26 10:46:29 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.5ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 4734)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 64.0ms | ActiveRecord: 1.3ms | Allocations: 15164)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:47:09 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 935)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 5926)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:47:54 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  Rendered banks/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3424)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 4665)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<% @banks.each do |bank| %>
+
+    <%=Bank: bank.name %><br>
+    <%= City: bank.city %><br>
+
+<% end %>
+):
+1:    
+2:    <% @banks.each do |bank| %>
+3:    
+4:        <%=Bank: bank.name %><br>
+5:        <%= City: bank.city %><br>
+6:    
+7:    <% end %>
+  
+app/views/banks/index.html.erb:4: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:5: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:4: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:5: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:4: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:5: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:4: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:5: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:4: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:5: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:4: syntax error, unexpected tLABEL
+app/views/banks/index.html.erb:5: syntax error, unexpected tLABEL
+Started GET "/banks" for ::1 at 2020-06-26 10:49:00 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  Rendered banks/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1051)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2320)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<% @banks.each do |bank| %>
+
+    <%= 'Bank:' bank.name %><br>
+    <%= 'City:' bank.city %><br>
+
+<% end %>
+):
+1:    
+2:    <% @banks.each do |bank| %>
+3:    
+4:        <%= 'Bank:' bank.name %><br>
+5:        <%= 'City:' bank.city %><br>
+6:    
+7:    <% end %>
+  
+app/views/banks/index.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/banks/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/banks" for ::1 at 2020-06-26 10:49:21 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.3ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 946)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.3ms | Allocations: 5972)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:50:34 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 922)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.2ms | Allocations: 5892)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:51:19 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.3ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 921)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 5890)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:52:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.4ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 4496)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 25.4ms | ActiveRecord: 1.1ms | Allocations: 10838)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:26 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 927)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.2ms | Allocations: 5895)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:40 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.3ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 927)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms | Allocations: 5907)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:42 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 4825)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:43 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 4825)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:44 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 4828)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:44 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 4825)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:45 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.1ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 4827)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:45 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.1ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.1ms | Allocations: 4824)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:53:47 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 4835)
+
+
+Started GET "/banks" for ::1 at 2020-06-26 10:54:50 -0400
+Processing by BanksController#index as HTML
+  Rendering banks/index.html.erb within layouts/application
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks"[0m
+  ↳ app/views/banks/index.html.erb:2
+  Rendered banks/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 935)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.2ms | Allocations: 5910)
+
+
+Started GET "/banks/11/show" for ::1 at 2020-06-26 10:56:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/banks/11/show"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/banks/11" for ::1 at 2020-06-26 10:56:30 -0400
+Processing by BanksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks" WHERE "banks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/banks_controller.rb:47:in `bank_finder'
+  Rendering banks/show.html.erb within layouts/application
+  Rendered banks/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 0.2ms | Allocations: 6046)
+
+
+Started GET "/banks/1" for ::1 at 2020-06-26 10:56:38 -0400
+Processing by BanksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBank Load (0.3ms)[0m  [1m[34mSELECT "banks".* FROM "banks" WHERE "banks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/banks_controller.rb:47:in `bank_finder'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1167)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bank with 'id'=1):
+  
+app/controllers/banks_controller.rb:47:in `bank_finder'
+app/controllers/banks_controller.rb:8:in `show'
+Started GET "/banks/11" for ::1 at 2020-06-26 10:57:03 -0400
+Processing by BanksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks" WHERE "banks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/banks_controller.rb:47:in `bank_finder'
+  Rendering banks/show.html.erb within layouts/application
+  Rendered banks/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 4594)
+
+
+Started GET "/banks/new" for ::1 at 2020-06-26 10:59:21 -0400
+Processing by BanksController#new as HTML
+  Rendering banks/new.html.erb within layouts/application
+  Rendered banks/new.html.erb within layouts/application (Duration: 19.2ms | Allocations: 3021)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.0ms | Allocations: 7917)
+
+
+Started POST "/banks" for ::1 at 2020-06-26 10:59:37 -0400
+Processing by BanksController#create as HTML
+  Parameters: {"authenticity_token"=>"nAK1dOkS+OcQs5dU3pqs/voGNrr9VWNVRNbEmxa4vIXrb+ucmcrfb5EzIGsR2hEmHsz6aPlLFJ3UXbFBkBgRgQ==", "bank"=>{"name"=>"Capital One", "city"=>"DC"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/banks_controller.rb:17:in `create'
+  [1m[36mBank Create (0.6ms)[0m  [1m[32mINSERT INTO "banks" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Capital One"], ["city", "DC"], ["created_at", "2020-06-26 14:59:37.112879"], ["updated_at", "2020-06-26 14:59:37.112879"]]
+  ↳ app/controllers/banks_controller.rb:17:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/banks_controller.rb:17:in `create'
+Redirected to http://localhost:3000/banks/21
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms | Allocations: 2997)
+
+
+Started GET "/banks/21" for ::1 at 2020-06-26 10:59:37 -0400
+Processing by BanksController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mBank Load (0.1ms)[0m  [1m[34mSELECT "banks".* FROM "banks" WHERE "banks"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/banks_controller.rb:47:in `bank_finder'
+  Rendering banks/show.html.erb within layouts/application
+  Rendered banks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.1ms | Allocations: 4821)
+
+
+Started GET "/banks/21/edit" for ::1 at 2020-06-26 11:01:37 -0400
+Processing by BanksController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks" WHERE "banks"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/banks_controller.rb:47:in `bank_finder'
+  Rendering banks/edit.html.erb within layouts/application
+  Rendered banks/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 607)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.2ms | Allocations: 6109)
+
+
+Started PATCH "/banks/21" for ::1 at 2020-06-26 11:01:46 -0400
+Processing by BanksController#update as HTML
+  Parameters: {"authenticity_token"=>"XyYdPyQ0RUbHkdy2QizXjrCtSHP7rdr7v2Av4utzI2EoS0PXVOxizkYRa4mNbGpWVGeEof+zrTMv61o4bdOOZQ==", "bank"=>{"name"=>"Capital One ", "city"=>"MD"}, "commit"=>"Submit", "id"=>"21"}
+  [1m[36mBank Load (1.0ms)[0m  [1m[34mSELECT "banks".* FROM "banks" WHERE "banks"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/banks_controller.rb:47:in `bank_finder'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/banks_controller.rb:28:in `update'
+  [1m[36mBank Update (0.6ms)[0m  [1m[33mUPDATE "banks" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "banks"."id" = ?[0m  [["name", "Capital One "], ["city", "MD"], ["updated_at", "2020-06-26 15:01:46.363541"], ["id", 21]]
+  ↳ app/controllers/banks_controller.rb:28:in `update'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/banks_controller.rb:28:in `update'
+Redirected to http://localhost:3000/banks/21
+Completed 302 Found in 14ms (ActiveRecord: 3.0ms | Allocations: 3436)
+
+
+Started GET "/banks/21" for ::1 at 2020-06-26 11:01:46 -0400
+Processing by BanksController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mBank Load (0.2ms)[0m  [1m[34mSELECT "banks".* FROM "banks" WHERE "banks"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/banks_controller.rb:47:in `bank_finder'
+  Rendering banks/show.html.erb within layouts/application
+  Rendered banks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.2ms | Allocations: 4818)
+
+
