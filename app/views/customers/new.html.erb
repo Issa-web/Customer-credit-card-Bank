@@ -1,12 +1,15 @@
 <h3>Customer Form</h3>
 
-<%= form_tag customers_path do %>
-    <label>Customer Name:</label><br>
-    <%= text_field_tag :'customer[name]' %><br>
-  
-    <label>Customer age:</label><br>
-    <%= text_area_tag :'customer[age]' %><br>
-  
-    <%= submit_tag "Submit New Customer" %>
-  <% end %>
+<%= form_for @customer do |f| %>
+    <%= f.label :name, 'Customer Name' %><br>
+    <%= f.text_field :name %><br>
 
+    <%= f.label :age, 'Customer Age' %><br>
+    <%= f.text_field :age %><br>
+
+
+    <%= f.submit 'Create New Customer' %><br>
+    <%end %>
+
+
+   

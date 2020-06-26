@@ -1,7 +1,9 @@
 
 <% @banks.each do |bank| %>
     <ul>
-        <li><%=  bank.info %></li>
+        <li><%= bank.info %></li>
+        <%= link_to 'Click here for bank info', bank_path(bank)%><br>
+
         <%= link_to 'Destroy Bank Record', bank_path(bank), 
         method: :delete,
         data: { confirm: 'Do you wish to delete this bank record?' }%>
