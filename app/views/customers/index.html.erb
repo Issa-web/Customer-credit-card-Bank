@@ -1,12 +1,13 @@
-<h1> List of Customers</h1>
+<h2> List of Customers</h2>
+
+<%= link_to 'No profile? Click here to register', new_customer_path %>
+
 <% @customers.each do |customer|%>
     <ul>
-        <li><%= customer.info %></li>
-        <%= link_to 'Destroy', customer_path(customer),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %>
+        <h3><li><%= link_to customer.name, customer_path(customer) %></li></h3>
+        <h3> Bank Name: </h3>
+        <% customer.banks.each do |bank| %>
+            <%= bank.name %><br>
+            <% end %>
    </ul>
-    <%end%>
-
-
-    
+<%end%>

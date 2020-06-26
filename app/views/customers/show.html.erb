@@ -1,2 +1,10 @@
-<%= @customer.name %>
-<%= @customer.age %>
+<h3>Customer Information Page</h3>
+<%= @customer.info %><br>
+
+<%= link_to 'Edit My Profile', edit_customer_path(@customer) %><br>
+
+<%= link_to 'Take me back to the homepage!', customers_path%><br>
+
+<%= link_to 'Destroy Customer Record', customer_path(@customer),
+        method: :delete,
+        data: { confirm: 'Are you sure you want to delete your profile?!?' } %>

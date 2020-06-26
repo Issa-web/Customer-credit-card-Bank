@@ -3,7 +3,7 @@ class Customer < ApplicationRecord
     has_many :banks, through: :credit_cards
 
     def info
-        self.name + " " + self.age.to_s
+        "Customer Name: #{self.name}, Age: #{self.age.to_s}"
     end
 
 end
